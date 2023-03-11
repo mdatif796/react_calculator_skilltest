@@ -4,7 +4,7 @@ import styles from "../styles/calculator.module.css";
 const Calculator = () => {
   const [result, setResult] = useState("0");
 
-  let operators = "%/*-+=";
+  let operators = "%/*-+=+/-";
 
   const handleClick = (value) => {
     if (result[result.length - 1] === "." && value === ".") {
@@ -83,7 +83,7 @@ const Calculator = () => {
         {renderButton("2")}
         {renderButton("3")}
         {renderButton("+", "orangeBtn")}
-        <button className={styles.equalBtn} onClick={() => ""}>
+        <button className={styles.equalBtn} onClick={() => handleClick(0)}>
           0
         </button>
         {renderButton(".")}
